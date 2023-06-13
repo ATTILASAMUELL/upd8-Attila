@@ -11,6 +11,8 @@
 Desenvolvimento de uma API  -
  + Laravel.
  
+## OBSERVAÇÃO 
+Não foi usado tabela no banco de dados,distintas (Endereço,Estado), para agilizar e ficar mais rapido o desenvolvimento, não é o certo.
 
 ---
 ## 🔧 Stack utilizada

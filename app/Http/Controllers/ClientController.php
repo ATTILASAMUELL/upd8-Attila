@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Http\Requests\ClientRequest;
 use App\Service\ClientService;
 use App\DTO\ClientDTO;
+use App\Http\Resources\ClientResource;
 
 class ClientController extends Controller
 {
@@ -33,6 +34,10 @@ class ClientController extends Controller
         $dto = new ClientDTO($request->all());
         $clientService = new ClientService();
         $clientService->create($dto);
+
+        if($clientService != false) {
+            return ClientResource::collection($clientService);
+        }
     }
 
     /**
