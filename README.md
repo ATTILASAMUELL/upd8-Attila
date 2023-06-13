@@ -74,6 +74,9 @@ php artisan migrate
 php artisan db:seed
 ```
 
+```bash
+php artisan scribe:generate
+```
 
 
 
