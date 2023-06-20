@@ -23,8 +23,8 @@ class ClientRequest extends FormRequest
     {
         return [
             'nome' => 'required',
-            'cpf' => 'required|min:8',
-            'dataDeNacimento' => 'required|email|unique:users',
+            'cpf' => 'required|min:11|max:11|unique:clients',
+            'dataDeNacimento' => 'required',
             'sexo' => 'required|min:8',
             'endereco' => 'required|min:8',
             'estado' => 'required|min:8',

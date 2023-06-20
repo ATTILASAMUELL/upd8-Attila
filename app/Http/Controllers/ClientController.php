@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Http\Requests\ClientRequest;
-use App\Service\ClientService;
-use App\DTO\ClientDTO;
+use App\Service\ClienteService;
+use App\DTO\ClientDto;
 use App\Http\Resources\ClientResource;
 
 class ClientController extends Controller
@@ -32,11 +32,11 @@ class ClientController extends Controller
     public function store(ClientRequest $request)
     {
         $dto = new ClientDTO($request->all());
-        $clientService = new ClientService();
-        $clientService->create($dto);
+        $clientService = new ClienteService();
+        $create = $clientService->create($dto);
 
-        if($clientService != false) {
-            return ClientResource::collection($clientService);
+        if($create != false) {
+            return new ClientResource($create);
         }
     }
 

@@ -12,7 +12,7 @@ class ClientDTO
      
     public readonly string $cpf;
  
-    public readonly string $dataDeNascimento;
+    public readonly string $dataDeNacimento;
  
     public readonly string $sexo;
 
@@ -27,7 +27,7 @@ class ClientDTO
     {
         $this->nome = Arr::get($patientData, 'nome');
         $this->cpf =  Arr::get($patientData, 'cpf');
-        $this->dataDeNascimento =  Arr::get($patientData, 'dataDeNascimento');
+        $this->dataDeNacimento =  Arr::get($patientData, 'dataDeNacimento');
         $this->sexo =  Arr::get($patientData, 'sexo');
         $this->endereco =  Arr::get($patientData, 'endereco');
         $this->estado =  Arr::get($patientData, 'estado');
@@ -39,7 +39,7 @@ class ClientDTO
         return [
             "nome" => $this->nome,
             "cpf" => $this->cpf,
-            "dataDeNascimento"=> $this->dataDeNascimento,
+            "dataDeNacimento"=> $this->dataDeNacimento,
             "sexo"=> $this->sexo,
             "endereco" => $this->endereco,
             "estado"=> $this->estado,

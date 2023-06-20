@@ -5,21 +5,21 @@ use App\DTO\ClientDTO;
 use App\Models\Client;
 use Exception;
 
-class ClientService
+class ClienteService
 {
     public function create(ClientDTO $clienteDTO):bool|Client
     {
         try {
             $client = new Client();
-            $client->create($clienteDTO->clientDto());
+            
+            $create = $client->create($clienteDTO->clientDto());
 
-            if(isset($client->id)) {
-                return $client;
+            if($create->id) {
+                return $create;
             }
             
             return false;
         } catch (Exception $e) {
-            report($e);
             return false;
         }
     }
